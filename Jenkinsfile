@@ -36,6 +36,6 @@ node {
 
 def myFunction(adbconfig) {
   for (item in adbconfig) {
-    echo " ===== ${item.url} ====="
+    echo " ===== ${adbconfig.url} ====="
   }
 }
