@@ -8,8 +8,8 @@ node {
   def DBTOKEN         = "adb-pat-token"
   def DBURL_DEV           = "https://adb-8754731172690151.11.azuredatabricks.net/"
   def ADBTOKEN_DEV = "dapi96a5342f7f6a74d0c5810f262ea55c78-dev"
-  def DBURL_STAGE           = "https://adb-8754731172690152.12.azuredatabricks.net/"
-  def ADBTOKEN_STAGE = "dapi96a5342f7f6a74d0c5810f262ea55c78-stage"
+  def DBURL_UAT           = "https://adb-8754731172690152.12.azuredatabricks.net/"
+  def ADBTOKEN_UAT = "dapi96a5342f7f6a74d0c5810f262ea55c78-stage"
   def SCRIPTPATH      = "${GITREPO}/scripts"
   def NOTEBOOKPATH    = "${GITREPO}/notebook"
   //def DBFSPATH        = "dbfs:<dbfs-path>"
@@ -25,14 +25,23 @@ node {
   }
   
   stage('dev') {
-    echo "======================inside setup stage ============================"
+    echo "======================inside dev stage ============================"
     def myObject = [url: "${DBURL_DEV}", token: "${ADBTOKEN_DEV}", env: 'DEV']
     echo "$myObject"
     echo "${env.WORKSPACE}"
     utilsdb = load "scripts/Utility_databricks.Groovy"
     utilsdb.myFunction(myObject)
+  }
+  
+  stage('stage') {
+    echo "======================inside UAT stage ============================"
+    def myObject = [url: "${DBURL_UAT}", token: "${ADBTOKEN_UAT}", env: 'UAT']
+    echo "$myObject"
+    echo "${env.WORKSPACE}"
+    utilsdb = load "scripts/Utility_databricks.Groovy"
+    utilsdb.myFunction(myObject)
     sh """#!/bin/bash
-        echo "======================inside setup stage ============================"
+        echo "======================inside UAT stage ============================"
       """
   }
 }
