@@ -28,7 +28,7 @@ node {
     echo "======================inside setup stage ============================"
     def myObject = [url: "${DBURL_DEV}", token: "${ADBTOKEN_DEV}", env: 'DEV']
     echo "$myObject"
-    utilsdb = load "${env.WORKSPACE/scripts/Utility_databricks.Groovy}"
+    utilsdb = load "${env.WORKSPACE}/scripts/Utility_databricks.Groovy"
     utilsdb.myFunction(myObject)
     sh """#!/bin/bash
         echo "======================inside setup stage ============================"
