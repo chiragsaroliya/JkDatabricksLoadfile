@@ -27,7 +27,7 @@ node {
   stage('dev') {
     def myObject = [url: "${DBURL_DEV}", token: "${ADBTOKEN_DEV}", env: 'DEV']
     echo "$myObject"
-    // myFunction(myObject)
+    myFunction(myObject)
     sh """#!/bin/bash
         echo "======================inside setup stage ============================"
       """
