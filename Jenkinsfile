@@ -35,7 +35,5 @@ node {
 }
 
 def myFunction(adbconfig) {
-  for (item in adbconfig) {
-    echo item
-  }
+  echo "${adbconfig}"
 }
