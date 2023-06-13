@@ -1,4 +1,5 @@
 // Jenkinsfile
+// created this repo for learning, how to load external groovy file, pass array or object to function in jenkins using groovy script
 node {
   //def GITREPO         = "/var/lib/jenkins/workspace/${env.JOB_NAME}"
   def GITREPO         = "/c/ProgramData/Jenkins/.jenkins/workspace/${env.JOB_NAME}"
