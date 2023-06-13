@@ -2,7 +2,7 @@
 node {
   //def GITREPO         = "/var/lib/jenkins/workspace/${env.JOB_NAME}"
   def GITREPO         = "/c/ProgramData/Jenkins/.jenkins/workspace/${env.JOB_NAME}"
-  def GITREPOREMOTE   = "https://github.com/chiragsaroliya/jenkinsLearning.git"
+  def GITREPOREMOTE   = "https://github.com/chiragsaroliya/JkDatabricksLoadfile.git"
   def GITHUBCREDID    = "git-adb-demo-project"
   def CURRENTRELEASE  = "main"
   def DBTOKEN         = "adb-pat-token"
